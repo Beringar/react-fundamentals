@@ -3,7 +3,6 @@
 
 <!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
 <body>
-  <div id="root"></div>
   <!-- 🐨 Then create a <script type="module"> for your JavaScript -->
   <!--   📜 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes -->
   <!--   📜 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
@@ -19,10 +18,15 @@
   <!--   💰 document.getElementById('root') -->
   <!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
   <script type="module">
+    const root = document.createElement('div')
+    root.setAttribute('id', 'root')
+    const bodyElement = document.querySelector('body')
+    bodyElement.append(root)
     const helloContainer = document.createElement('div')
     helloContainer.textContent = 'Hello World'
     helloContainer.classList.add(['container'])
-    const root = document.getElementById('root')
+    // we don't need to get the root div now
+    // const root = document.getElementById('root')
     root.append(helloContainer)
   </script>
 </body>
