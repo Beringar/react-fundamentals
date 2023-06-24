@@ -20,8 +20,7 @@
   <script type="module">
     const root = document.createElement('div')
     root.setAttribute('id', 'root')
-    const bodyElement = document.querySelector('body')
-    bodyElement.append(root)
+    document.body.append(root)
     const helloContainer = document.createElement('div')
     helloContainer.textContent = 'Hello World'
     helloContainer.classList.add(['container'])
