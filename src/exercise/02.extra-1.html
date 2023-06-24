@@ -1,0 +1,41 @@
+<!-- Intro to raw React APIs -->
+<!-- http://localhost:3000/isolated/exercise/02.html -->
+
+<body>
+  <div id="root"></div>
+
+  <!-- 🐨 add React and ReactDOM on the page.
+       💰 Here are script tags that'll do the job:
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  -->
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script type="module">
+    const rootElement = document.getElementById('root')
+
+    // You're going to re-implement this code using React!
+    // 💣 So go ahead and delete this implementation (or comment it out for now)
+    // These three lines are similar to React.createElement
+
+    const text = 'Hello World'
+    const makeChildren = text =>
+      text
+        .split(' ')
+        .map((word, i) =>
+          React.createElement('span', {key: `${i}-${word}`, children: word}),
+        )
+    const elementProps = {className: 'container', children: makeChildren(text)}
+    const reactElement = React.createElement('div', elementProps)
+
+    // Create a root.
+    const root = ReactDOM.createRoot(rootElement)
+
+    // Initial render
+    root.render(reactElement)
+
+    // 🐨 Please re-implement the regular document.createElement code above
+    // with these React API calls
+    // 💰 The example in the markdown file should be a good hint for you.
+  </script>
+</body>
